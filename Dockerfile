@@ -7,6 +7,8 @@ COPY package.json pnpm-lock.yaml .npmrc ./
 RUN corepack enable pnpm && pnpm install --frozen-lockfile
 
 FROM base AS builder
+ARG PAYLOAD_SECRET
+ENV PAYLOAD_SECRET=$PAYLOAD_SECRET
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 RUN corepack enable pnpm && pnpm run build && pnpm prune --prod
