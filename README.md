@@ -25,26 +25,19 @@ Core features:
 
 ## Quick Start
 
-To spin up this example locally, follow these steps:
+For local Docker development, see `README-local-dev.md`.
 
-### Clone
+### Start (development)
 
-If you have not done so already, you need to have standalone copy of this repo on your machine. If you've already cloned this repo, skip to [Development](#development).
+1. `cp .env.example .env`
+1. `pnpm install`
+1. `pnpm dev`
+1. open `http://localhost:3000` (admin at `/admin`)
 
-Use the `create-payload-app` CLI to clone this template directly to your machine:
+### Start (production-like)
 
-```bash
-pnpx create-payload-app my-project -t website
-```
-
-### Development
-
-1. First [clone the repo](#clone) if you have not done so already
-1. `cd my-project && cp .env.example .env` to copy the example environment variables
-1. `pnpm install && pnpm dev` to install dependencies and start the dev server
-1. open `http://localhost:3000` to open the app in your browser
-
-That's it! Changes made in `./src` will be reflected in your app. Follow the on-screen instructions to login and create your first admin user. Then check out [Production](#production) once you're ready to build and serve your app, and [Deployment](#deployment) when you're ready to go live.
+1. `pnpm build`
+1. `pnpm start`
 
 ## How it works
 

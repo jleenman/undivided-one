@@ -16,11 +16,15 @@ cp .env.example .env.local
 openssl rand -base64 48
 ```
 
-## Start
+## Start (development)
 
 ```bash
 docker compose up --build
 ```
+
+Notes:
+- Uses Turbopack for faster local development
+- Webpack fallback: change the `command` in `docker-compose.yml` to `pnpm dev:webpack -- --hostname 0.0.0.0`
 
 ## Open
 - App: http://localhost:3000
