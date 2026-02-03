@@ -6,6 +6,11 @@ FROM base AS deps
 COPY package.json pnpm-lock.yaml .npmrc ./
 RUN corepack enable pnpm && pnpm install --frozen-lockfile
 
+FROM base AS dev
+WORKDIR /app
+COPY package.json pnpm-lock.yaml .npmrc ./
+RUN corepack enable pnpm && pnpm install
+
 FROM base AS builder
 ARG PAYLOAD_SECRET
 ENV PAYLOAD_SECRET=$PAYLOAD_SECRET
