@@ -198,7 +198,19 @@ export interface Page {
           id?: string | null;
         }[]
       | null;
-    media?: (number | null) | Media;
+    /**
+     * Set media per device width (in pixels).
+     */
+    media?:
+      | {
+          /**
+           * Minimum viewport width in px (e.g. 0 mobile, 768 tablet, 1024 desktop).
+           */
+          minWidth: number;
+          media: number | Media;
+          id?: string | null;
+        }[]
+      | null;
   };
   layout: (CallToActionBlock | ContentBlock | MediaBlock | ArchiveBlock | FormBlock)[];
   meta?: {
@@ -1077,7 +1089,13 @@ export interface PagesSelect<T extends boolean = true> {
                   };
               id?: T;
             };
-        media?: T;
+        media?:
+          | T
+          | {
+              minWidth?: T;
+              media?: T;
+              id?: T;
+            };
       };
   layout?:
     | T

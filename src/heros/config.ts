@@ -60,12 +60,32 @@ export const hero: Field = {
     }),
     {
       name: 'media',
-      type: 'upload',
+      type: 'array',
       admin: {
         condition: (_, { type } = {}) => ['highImpact', 'mediumImpact'].includes(type),
+        description: 'Set media per device width (in pixels).',
       },
-      relationTo: 'media',
-      required: true,
+      fields: [
+        {
+          name: 'minWidth',
+          type: 'number',
+          admin: {
+            description: 'Minimum viewport width in px (e.g. 0 mobile, 768 tablet, 1024 desktop).',
+            width: '50%',
+          },
+          min: 0,
+          required: true,
+        },
+        {
+          name: 'media',
+          type: 'upload',
+          admin: {
+            width: '50%',
+          },
+          relationTo: 'media',
+          required: true,
+        },
+      ],
     },
   ],
   label: false,

@@ -7,9 +7,11 @@ import type { Page } from '@/payload-types'
 import { CMSLink } from '@/components/Link'
 import { Media } from '@/components/Media'
 import RichText from '@/components/RichText'
+import { useResponsiveHeroMedia } from '@/heros/useResponsiveHeroMedia'
 
 export const HighImpactHero: React.FC<Page['hero']> = ({ links, media, richText }) => {
   const { setHeaderTheme } = useHeaderTheme()
+  const selectedMedia = useResponsiveHeroMedia(media)
 
   useEffect(() => {
     setHeaderTheme('dark')
@@ -37,8 +39,8 @@ export const HighImpactHero: React.FC<Page['hero']> = ({ links, media, richText 
         </div>
       </div>
       <div className="min-h-[80vh] select-none">
-        {media && typeof media === 'object' && (
-          <Media fill imgClassName="-z-10 object-cover" priority resource={media} />
+        {selectedMedia && typeof selectedMedia === 'object' && (
+          <Media fill imgClassName="-z-10 object-cover" priority resource={selectedMedia} />
         )}
       </div>
     </div>

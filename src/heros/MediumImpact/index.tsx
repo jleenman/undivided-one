@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react'
 
 import type { Page } from '@/payload-types'
@@ -5,8 +7,11 @@ import type { Page } from '@/payload-types'
 import { CMSLink } from '@/components/Link'
 import { Media } from '@/components/Media'
 import RichText from '@/components/RichText'
+import { useResponsiveHeroMedia } from '@/heros/useResponsiveHeroMedia'
 
 export const MediumImpactHero: React.FC<Page['hero']> = ({ links, media, richText }) => {
+  const selectedMedia = useResponsiveHeroMedia(media)
+
   return (
     <div className="">
       <div className="container mb-8">
@@ -25,17 +30,17 @@ export const MediumImpactHero: React.FC<Page['hero']> = ({ links, media, richTex
         )}
       </div>
       <div className="container ">
-        {media && typeof media === 'object' && (
+        {selectedMedia && typeof selectedMedia === 'object' && (
           <div>
             <Media
               className="-mx-4 md:-mx-8 2xl:-mx-16"
               imgClassName=""
               priority
-              resource={media}
+              resource={selectedMedia}
             />
-            {media?.caption && (
+            {selectedMedia?.caption && (
               <div className="mt-3">
-                <RichText data={media.caption} enableGutter={false} />
+                <RichText data={selectedMedia.caption} enableGutter={false} />
               </div>
             )}
           </div>
