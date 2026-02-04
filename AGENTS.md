@@ -31,6 +31,28 @@ src/
 └── payload.config.ts        # Main config
 ```
 
+## Workflow & Development
+
+- Install dependencies with `pnpm install`.
+- Copy `.env.example` to `.env`, then start development with `pnpm dev` (Next.js + Payload). See `README.md` for onboarding details.
+- For production parity locally, run `pnpm dev:prod` to build and start from a clean `.next`.
+- Docker workflow: `docker-compose up` runs `yarn install` and `yarn dev` inside the container and expects MongoDB via the bundled `mongo` service. Prefer `pnpm` on the host to keep lockfile consistency.
+
+## Build & Release
+
+- Production build: `pnpm build` (followed by `pnpm start`).
+- Generate import maps after creating/modifying components: `pnpm generate:importmap`.
+- Generate Payload types after schema changes: `pnpm generate:types`.
+- Run type checks after code changes: `pnpm tsc --noEmit`.
+
+## Living Project Notes (Update Every PR)
+
+This section **must be updated in every PR** with new learnings or changes discovered during the work. Append bullet points with date/PR summary so the next contributor starts with the latest knowledge.
+
+Example format:
+
+- YYYY-MM-DD: <short summary of new insight or change (e.g., new script, changed env var, migration step)>.
+
 ## Configuration
 
 ### Minimal Config Pattern
