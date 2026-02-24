@@ -12,6 +12,7 @@ import { Providers } from '@/providers'
 import { InitTheme } from '@/providers/Theme/InitTheme'
 import { mergeOpenGraph } from '@/utilities/mergeOpenGraph'
 import { draftMode } from 'next/headers'
+import { getSiteSettings } from '@/utilities/getSiteSettings'
 
 import './globals.css'
 import { getServerSideURL } from '@/utilities/getURL'
@@ -45,11 +46,19 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   )
 }
 
-export const metadata: Metadata = {
-  metadataBase: new URL(getServerSideURL()),
-  openGraph: mergeOpenGraph(),
-  twitter: {
-    card: 'summary_large_image',
-    creator: '@payloadcms',
-  },
+export async function generateMetadata(): Promise<Metadata> {
+  const { siteTitle } = await getSiteSettings()
+
+  return {
+    metadataBase: new URL(getServerSideURL()),
+    title: {
+      default: siteTitle,
+      template: `%s | ${siteTitle}`,
+    },
+    openGraph: mergeOpenGraph(undefined, siteTitle),
+    twitter: {
+      card: 'summary_large_image',
+      creator: '@payloadcms',
+    },
+  }
 }
