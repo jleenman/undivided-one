@@ -1,31 +1,45 @@
-version: '3'
-
 services:
   payload:
-    image: node:18-alpine
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
     ports:
-      - '3000:3000'
+      - '${APP_PORT:-3001}:3000'
     volumes:
       - .:/home/node/app
       - node_modules:/home/node/app/node_modules
-    working_dir: /home/node/app/
-    command: sh -c "yarn install && yarn dev"
+      - next:/home/node/app/.next
+      - media:/home/node/app/public/media
+    working_dir: /home/node/app
     depends_on:
-      - mongo
+      postgres:
+        condition: service_healthy
     env_file:
       - .env
+    environment:
+      DATABASE_URL: postgresql://postgres:postgres@postgres:5432/undivided_one
+      DEV_ADMIN_EMAIL: dev@undivided.local
+      DEV_ADMIN_NAME: Dev Admin
+      DEV_ADMIN_PASSWORD: devpassword
+      NEXT_PUBLIC_SERVER_URL: http://localhost:${APP_PORT:-3001}
+      WATCHPACK_POLLING: 'true'
 
-  mongo:
-    image: mongo:latest
-    ports:
-      - '27017:27017'
-    command:
-      - --storageEngine=wiredTiger
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: undivided_one
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
     volumes:
-      - data:/data/db
-    logging:
-      driver: none
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U postgres -d undivided_one']
+      interval: 5s
+      timeout: 5s
+      retries: 10
 
 volumes:
-  data:
   node_modules:
+  next:
+  media:
+  postgres_data:

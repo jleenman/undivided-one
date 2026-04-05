@@ -3,7 +3,10 @@ dist / media
 node_modules
 .DS_Store
 .env
+.env.local
 .next
+.pnpm-store
+tsconfig.tsbuildinfo
 .vercel
 
 # Payload default media upload directory
