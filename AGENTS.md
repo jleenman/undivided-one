@@ -9,12 +9,23 @@ You are an expert Payload CMS developer. When working with Payload projects, fol
 3. **Type Generation**: Run `generate:types` script after schema changes
 4. **Transaction Safety**: Always pass `req` to nested operations in hooks
 5. **Access Control**: Understand Local API bypasses access control by default
-6. **Access Control**: Ensure roles exist when modifiyng collection or globals with access controls
+6. **Access Control**: Ensure roles exist when modifying collection or globals with access controls
+7. **Migration Coverage**: When changing collections, globals, or other schema-affecting config, create or update the matching migration files and verify they are registered
+8. **Process Maintenance**: When a task reveals a reusable workflow gap, missing checklist item, or recurring mistake, update `AGENTS.md` in the same change so the lesson is preserved
 
 ### Code Validation
 
 - To validate typescript correctness after modifying code run `tsc --noEmit`
+- After schema changes, verify the PR contains the required migrations, including any migration index updates or generated metadata files
+- After adding or changing collections/globals that are required for local development, update the relevant seed, bootstrap, setup, or reset flows so a fresh environment includes the needed data
+- If a bug was caused by missing process knowledge, missing setup steps, or a forgotten verification step, update `AGENTS.md` before finishing the task
 - Generate import maps after creating or modifying components.
+
+### Process Maintenance
+
+- Treat `AGENTS.md` as a living project checklist, not static documentation
+- When you fix a mistake that could repeat in future work, add the rule, checklist item, or lesson learned to `AGENTS.md`
+- Pay special attention to missing migrations, missing seeded globals, missing bootstrap/setup steps, and other gaps that only appear on a fresh local environment
 
 ## Project Structure
 
