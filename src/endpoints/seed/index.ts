@@ -25,6 +25,7 @@ const collections: CollectionSlug[] = [
 
 const categories = ['Technology', 'News', 'Finance', 'Design', 'Software', 'Engineering']
 const dirname = path.dirname(fileURLToPath(import.meta.url))
+const defaultSiteTitle = 'Payload Website Template'
 
 // Next.js revalidation errors are normal when seeding the database without a server running
 // i.e. running `yarn seed` locally instead of using the admin UI within an active app
@@ -62,6 +63,15 @@ export const seed = async ({
       slug: 'footer',
       data: {
         navItems: [],
+      },
+      depth: 0,
+      context: seedContext,
+    }),
+    payload.updateGlobal({
+      slug: 'siteSettings',
+      data: {
+        siteTitle: defaultSiteTitle,
+        logo: null,
       },
       depth: 0,
       context: seedContext,
@@ -273,6 +283,14 @@ export const seed = async ({
             },
           },
         ],
+      },
+    }),
+    payload.updateGlobal({
+      slug: 'siteSettings',
+      context: seedContext,
+      data: {
+        siteTitle: defaultSiteTitle,
+        logo: null,
       },
     }),
   ])

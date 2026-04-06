@@ -7,6 +7,7 @@ import { seed } from '../endpoints/seed'
 const DEV_ADMIN_EMAIL = process.env.DEV_ADMIN_EMAIL || 'dev@undivided.local'
 const DEV_ADMIN_PASSWORD = process.env.DEV_ADMIN_PASSWORD || 'devpassword'
 const DEV_ADMIN_NAME = process.env.DEV_ADMIN_NAME || 'Dev Admin'
+const DEFAULT_SITE_TITLE = 'Payload Website Template'
 
 const payload = await getPayload({ config: configPromise })
 
@@ -44,6 +45,27 @@ if (!adminUser) {
       password: DEV_ADMIN_PASSWORD,
     },
     depth: 0,
+  })
+}
+
+const siteSettings = await payload.findGlobal({
+  slug: 'siteSettings',
+  depth: 0,
+})
+
+if (!siteSettings.createdAt) {
+  payload.logger.info('Initializing site settings global...')
+
+  await payload.updateGlobal({
+    slug: 'siteSettings',
+    data: {
+      siteTitle: siteSettings.siteTitle || DEFAULT_SITE_TITLE,
+      logo: siteSettings.logo || null,
+    },
+    depth: 0,
+    context: {
+      disableRevalidate: true,
+    },
   })
 }
 
