@@ -63,6 +63,7 @@ This section **must be updated in every PR** with new learnings or changes disco
 Example format:
 
 - YYYY-MM-DD: <short summary of new insight or change (e.g., new script, changed env var, migration step)>.
+- 2026-05-02: Added `siteSettings.logoText` for configurable frontend logo copy; include a migration and a runtime fallback for pre-migration databases so header/footer rendering does not crash.
 
 ## Configuration
 

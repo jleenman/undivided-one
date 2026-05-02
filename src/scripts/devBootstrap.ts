@@ -8,6 +8,7 @@ const DEV_ADMIN_EMAIL = process.env.DEV_ADMIN_EMAIL || 'dev@undivided.local'
 const DEV_ADMIN_PASSWORD = process.env.DEV_ADMIN_PASSWORD || 'devpassword'
 const DEV_ADMIN_NAME = process.env.DEV_ADMIN_NAME || 'Dev Admin'
 const DEFAULT_SITE_TITLE = 'Payload Website Template'
+const DEFAULT_LOGO_TEXT = 'Payload Website Template'
 
 const payload = await getPayload({ config: configPromise })
 
@@ -60,6 +61,7 @@ if (!siteSettings.createdAt) {
     slug: 'siteSettings',
     data: {
       siteTitle: siteSettings.siteTitle || DEFAULT_SITE_TITLE,
+      logoText: siteSettings.logoText || siteSettings.siteTitle || DEFAULT_LOGO_TEXT,
       logo: siteSettings.logo || null,
     },
     depth: 0,

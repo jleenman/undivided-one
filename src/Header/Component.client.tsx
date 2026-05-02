@@ -13,10 +13,11 @@ import type { Media } from '@/payload-types'
 interface HeaderClientProps {
   data: Header
   logo?: Media | null | number
+  logoText: string
   siteTitle: string
 }
 
-export const HeaderClient: React.FC<HeaderClientProps> = ({ data, logo, siteTitle }) => {
+export const HeaderClient: React.FC<HeaderClientProps> = ({ data, logo, logoText, siteTitle }) => {
   /* Storing the value in a useState to avoid hydration errors */
   const [theme, setTheme] = useState<string | null>(null)
   const { headerTheme, setHeaderTheme } = useHeaderTheme()
@@ -40,6 +41,7 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data, logo, siteTitl
             loading="eager"
             priority="high"
             logo={typeof logo === 'object' ? logo : null}
+            logoText={logoText}
             siteTitle={siteTitle}
             textClassName="text-foreground"
           />

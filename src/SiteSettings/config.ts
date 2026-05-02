@@ -17,6 +17,16 @@ export const SiteSettings: GlobalConfig = {
       defaultValue: 'Payload Website Template',
     },
     {
+      name: 'logoText',
+      label: 'Logo Text',
+      type: 'text',
+      required: true,
+      defaultValue: 'Payload Website Template',
+      admin: {
+        description: 'Text shown next to the logo in the site header and footer.',
+      },
+    },
+    {
       name: 'logo',
       label: 'Website Logo',
       type: 'upload',

@@ -9,6 +9,7 @@ interface Props {
   imageClassName?: string
   textClassName?: string
   logo?: Media | null
+  logoText: string
   siteTitle: string
   loading?: 'lazy' | 'eager'
   priority?: 'auto' | 'high' | 'low'
@@ -22,6 +23,7 @@ export const Logo = (props: Props) => {
     imageClassName,
     textClassName,
     logo,
+    logoText,
     siteTitle,
   } = props
 
@@ -45,7 +47,7 @@ export const Logo = (props: Props) => {
           src={logoUrl}
         />
       )}
-      <span className={clsx('text-base font-semibold leading-none', textClassName)}>{siteTitle}</span>
+      <span className={clsx('text-base font-semibold leading-none', textClassName)}>{logoText}</span>
     </span>
   )
 }

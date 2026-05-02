@@ -1696,6 +1696,10 @@ export interface Footer {
 export interface SiteSetting {
   id: number;
   siteTitle: string;
+  /**
+   * Text shown next to the logo in the site header and footer.
+   */
+  logoText: string;
   logo?: (number | null) | Media;
   updatedAt?: string | null;
   createdAt?: string | null;
@@ -1752,6 +1756,7 @@ export interface FooterSelect<T extends boolean = true> {
  */
 export interface SiteSettingsSelect<T extends boolean = true> {
   siteTitle?: T;
+  logoText?: T;
   logo?: T;
   updatedAt?: T;
   createdAt?: T;

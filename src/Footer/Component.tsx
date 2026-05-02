@@ -23,6 +23,7 @@ export async function Footer() {
         <Link className="flex items-center" href="/">
           <Logo
             logo={typeof siteSettings.logo === 'object' ? siteSettings.logo : null}
+            logoText={siteSettings.logoText}
             siteTitle={siteSettings.siteTitle}
             textClassName="text-white"
           />

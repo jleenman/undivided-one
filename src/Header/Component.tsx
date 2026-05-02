@@ -11,5 +11,12 @@ export async function Header() {
     getSiteSettings(),
   ])
 
-  return <HeaderClient data={headerData} logo={siteSettings.logo} siteTitle={siteSettings.siteTitle} />
+  return (
+    <HeaderClient
+      data={headerData}
+      logo={siteSettings.logo}
+      logoText={siteSettings.logoText}
+      siteTitle={siteSettings.siteTitle}
+    />
+  )
 }
