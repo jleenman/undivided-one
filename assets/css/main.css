@@ -16,6 +16,7 @@ body {
   max-width: 100%;
   overflow-x: clip;
   overscroll-behavior-x: none;
+  touch-action: pan-y;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -359,6 +360,7 @@ body {
 .scripture-ref-label {
   display: inline;
   cursor: help;
+  touch-action: manipulation;
   text-decoration-line: underline;
   text-decoration-style: dotted;
   text-decoration-color: rgba(201, 149, 54, 0.82);
@@ -392,6 +394,8 @@ body {
   transition: opacity 180ms ease, transform 180ms ease;
   white-space: normal;
   overflow-wrap: anywhere;
+  overscroll-behavior: contain;
+  touch-action: pan-y;
 }
 
 .scripture-popover::after {
@@ -555,6 +559,7 @@ body {
   background: rgba(251, 248, 241, 0.92);
   color: #8b5d1d;
   text-decoration: none;
+  touch-action: manipulation;
   transition: background 180ms ease, border-color 180ms ease, color 180ms ease, transform 180ms ease;
 }
 
@@ -591,6 +596,8 @@ body {
   transition: opacity 180ms ease, transform 180ms ease;
   white-space: normal;
   overflow-wrap: anywhere;
+  overscroll-behavior: contain;
+  touch-action: pan-y;
 }
 
 .footnote-popover::after {
