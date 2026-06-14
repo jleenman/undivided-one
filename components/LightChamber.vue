@@ -458,11 +458,11 @@ onMounted(() => {
           : 'A living reading experience around identity, echad, revelation, and the threshold between seen and unseen.' }}
       </p>
       <div class="mt-10 flex flex-wrap gap-3">
-        <NuxtLink to="/en/essay" class="border border-gold bg-gold px-5 py-3 text-sm font-medium text-ink transition hover:bg-transparent hover:text-gold">
-          {{ props.locale === 'nl' ? 'Lees in het Engels' : 'Read in English' }}
+        <NuxtLink to="/en/start" class="border border-gold bg-gold px-5 py-3 text-sm font-medium text-ink transition hover:bg-transparent hover:text-gold">
+          {{ props.locale === 'nl' ? 'Lees in het Engels' : 'Start Here' }}
         </NuxtLink>
-        <NuxtLink to="/nl/essay" class="border border-parchment/25 px-5 py-3 text-sm font-medium text-parchment transition hover:border-gold hover:text-gold">
-          {{ props.locale === 'nl' ? 'Lees in het Nederlands' : 'Lees in Nederlands' }}
+        <NuxtLink to="/nl/start" class="border border-parchment/25 px-5 py-3 text-sm font-medium text-parchment transition hover:border-gold hover:text-gold">
+          Begin hier
         </NuxtLink>
       </div>
     </div>

@@ -44,15 +44,20 @@ defineProps<{ locale?: 'nl' | 'en' }>()
       <section class="mx-auto max-w-6xl px-6 py-20" data-header-theme="light">
         <div class="relative overflow-hidden border border-ink/10 bg-bone p-8 shadow-soft md:p-12">
           <GrowthLines variant="cta" tone="light" />
-          <p class="font-display display-title section-display mb-6 text-3xl md:text-5xl">
-            {{ locale === 'nl' ? 'Begin met lezen.' : 'Begin reading.' }}
+          <p class="font-display display-title section-display mb-4 text-3xl md:text-5xl">
+            {{ locale === 'nl' ? 'Begin met de vraag.' : 'Begin with the question.' }}
+          </p>
+          <p class="mb-8 max-w-2xl text-base leading-7 text-ink/68">
+            {{ locale === 'nl'
+              ? 'Een korte tussenstap helpt nieuwe lezers de spanning te begrijpen voordat zij de volledige essay ingaan.'
+              : 'A short orientation helps new readers understand the tension before entering the full essay.' }}
           </p>
           <div class="flex flex-wrap gap-3">
-            <NuxtLink to="/en/essay" class="border border-gold bg-gold px-5 py-3 text-sm font-medium text-ink transition hover:bg-transparent">
-              {{ locale === 'nl' ? 'Lees in het Engels' : 'Read in English' }}
+            <NuxtLink :to="locale === 'nl' ? '/nl/start' : '/en/start'" class="border border-gold bg-gold px-5 py-3 text-sm font-medium text-ink transition hover:bg-transparent">
+              {{ locale === 'nl' ? 'Begin hier' : 'Start Here' }}
             </NuxtLink>
-            <NuxtLink to="/nl/essay" class="border border-ink/20 px-5 py-3 text-sm font-medium text-ink transition hover:border-gold hover:text-ember">
-              {{ locale === 'nl' ? 'Lees in het Nederlands' : 'Lees in Nederlands' }}
+            <NuxtLink :to="locale === 'nl' ? '/nl/essay' : '/en/essay'" class="border border-ink/20 px-5 py-3 text-sm font-medium text-ink transition hover:border-gold hover:text-ember">
+              {{ locale === 'nl' ? 'Volledige essay' : 'Full Essay' }}
             </NuxtLink>
             <DownloadButtons :labels-locale="locale" />
           </div>

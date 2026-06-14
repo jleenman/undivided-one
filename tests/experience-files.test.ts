@@ -120,7 +120,7 @@ describe('visual experience implementation', () => {
     expect(chamber).toContain('De Ene God')
     expect(chamber).toContain('Zichtbaar geworden')
     expect(chamber).toContain('Lees in het Engels')
-    expect(chamber).toContain('Lees in het Nederlands')
+    expect(chamber).toContain('Begin hier')
 
     expect(landing).toContain("locale === 'nl' ? 'Geen systeem'")
     expect(landing).toContain("locale === 'nl' ? 'Kennen'")
@@ -128,7 +128,7 @@ describe('visual experience implementation', () => {
     expect(landing).toContain("locale === 'nl' ? 'Zichtbaar'")
     expect(landing).toContain("locale === 'nl' ? 'Gezien / ongezien'")
     expect(landing).toContain('Ene Naam. Ene troon. Ene God.')
-    expect(landing).toContain("locale === 'nl' ? 'Begin met lezen.'")
+    expect(landing).toContain("locale === 'nl' ? 'Begin met de vraag.'")
     expect(landing).toContain(':labels-locale="locale"')
     expect(downloads).toContain('Download Engelse PDF')
   })
@@ -178,6 +178,46 @@ describe('visual experience implementation', () => {
     expect(article).toContain('/downloads/undivided-confession-nl.pdf')
     expect(article).toContain('/downloads/undivided-confession-en.pdf')
     expect(article).toContain('Download confession PDF')
+  })
+
+  it('adds a simple visitor journey before the full essay', () => {
+    const config = readFileSync('nuxt.config.ts', 'utf8')
+    const header = readFileSync('components/AppHeader.vue', 'utf8')
+    const chamber = readFileSync('components/LightChamber.vue', 'utf8')
+    const landing = readFileSync('components/LandingExperience.vue', 'utf8')
+    const introRenderer = readFileSync('components/IntroPageRenderer.vue', 'utf8')
+
+    for (const route of ['/nl/start', '/en/start', '/nl/question', '/en/question', '/nl/argument', '/en/argument']) {
+      expect(config).toContain(`'${route}'`)
+    }
+
+    expect(header).toContain('/en/start')
+    expect(header).toContain('/nl/start')
+    expect(chamber).toContain('/en/start')
+    expect(chamber).toContain('/nl/start')
+    expect(landing).toContain('/en/start')
+    expect(landing).toContain('/nl/start')
+    expect(introRenderer).toContain('readingTime')
+    expect(introRenderer).toContain('previous')
+    expect(introRenderer).toContain('next')
+    expect(introRenderer).toContain('DownloadButtons')
+  })
+
+  it('keeps introductory content separate from the approved essay', () => {
+    for (const file of [
+      'content/en/start.md',
+      'content/en/question.md',
+      'content/en/argument.md',
+      'content/nl/start.md',
+      'content/nl/question.md',
+      'content/nl/argument.md',
+    ]) {
+      const source = readFileSync(file, 'utf8')
+
+      expect(source).toContain('title:')
+      expect(source).toContain('description:')
+      expect(source.length).toBeGreaterThan(1000)
+    }
   })
 
   it('makes the article table of contents active and collapsible', () => {

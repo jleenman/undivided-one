@@ -78,6 +78,14 @@ watch(() => route.fullPath, () => {
       <nav class="flex items-center gap-2 text-sm">
         <NuxtLink
           v-if="currentLocale !== 'root'"
+          :to="currentLocale === 'nl' ? '/nl/start' : '/en/start'"
+          class="hidden px-3 py-2 transition sm:inline-flex"
+          :class="isDark ? 'text-parchment/70 hover:text-parchment' : 'text-ink/70 hover:text-ink'"
+        >
+          {{ currentLocale === 'nl' ? 'Begin hier' : 'Start Here' }}
+        </NuxtLink>
+        <NuxtLink
+          v-if="currentLocale !== 'root'"
           :to="currentLocale === 'nl' ? '/nl/essay' : '/en/essay'"
           class="hidden px-3 py-2 transition sm:inline-flex"
           :class="isDark ? 'text-parchment/70 hover:text-parchment' : 'text-ink/70 hover:text-ink'"
