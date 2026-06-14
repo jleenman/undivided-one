@@ -111,6 +111,28 @@ describe('visual experience implementation', () => {
     expect(chamber).toContain('min-h-screen')
   })
 
+  it('localizes the Dutch homepage copy beyond the Undivided One brand name', () => {
+    const chamber = readFileSync('components/LightChamber.vue', 'utf8')
+    const landing = readFileSync('components/LandingExperience.vue', 'utf8')
+    const downloads = readFileSync('components/DownloadButtons.vue', 'utf8')
+
+    expect(chamber).toContain("props.locale === 'nl'")
+    expect(chamber).toContain('De Ene God')
+    expect(chamber).toContain('Zichtbaar geworden')
+    expect(chamber).toContain('Lees in het Engels')
+    expect(chamber).toContain('Lees in het Nederlands')
+
+    expect(landing).toContain("locale === 'nl' ? 'Geen systeem'")
+    expect(landing).toContain("locale === 'nl' ? 'Kennen'")
+    expect(landing).toContain("locale === 'nl' ? 'Openbaring'")
+    expect(landing).toContain("locale === 'nl' ? 'Zichtbaar'")
+    expect(landing).toContain("locale === 'nl' ? 'Gezien / ongezien'")
+    expect(landing).toContain('Ene Naam. Ene troon. Ene God.')
+    expect(landing).toContain("locale === 'nl' ? 'Begin met lezen.'")
+    expect(landing).toContain(':labels-locale="locale"')
+    expect(downloads).toContain('Download Engelse PDF')
+  })
+
   it('adds a spatial reading layer to essay and confession pages', () => {
     const article = readFileSync('components/ArticleRenderer.vue', 'utf8')
     const aura = readFileSync('components/ReadingAura.vue', 'utf8')
