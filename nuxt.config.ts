@@ -18,7 +18,21 @@ export default defineNuxtConfig({
   nitro: {
     preset: 'github_pages',
     prerender: {
-      routes: ['/', '/nl', '/en', '/nl/essay', '/en/essay', '/nl/confession', '/en/confession'],
+      routes: [
+        '/',
+        '/nl',
+        '/en',
+        '/nl/start',
+        '/en/start',
+        '/nl/question',
+        '/en/question',
+        '/nl/argument',
+        '/en/argument',
+        '/nl/essay',
+        '/en/essay',
+        '/nl/confession',
+        '/en/confession',
+      ],
     },
   },
   typescript: {
