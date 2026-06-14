@@ -487,12 +487,6 @@ body {
   outline: none;
 }
 
-.scripture-ref[data-popover-hidden="true"] .scripture-popover,
-.footnote-ref[data-popover-hidden="true"] .footnote-popover {
-  opacity: 0;
-  pointer-events: none;
-}
-
 @media (max-width: 640px) {
   .article-stage {
     perspective: none;
@@ -508,6 +502,7 @@ body {
     position: fixed;
     inset: auto 1rem 1rem 1rem;
     width: auto;
+    max-width: calc(100vw - 2rem);
     max-height: min(22rem, calc(100vh - 2rem));
     transform: translateY(0.45rem) scale(0.98);
     transform-origin: bottom center;
@@ -624,6 +619,37 @@ body {
   border-bottom: 1px solid rgba(201, 149, 54, 0.46);
   border-right: 1px solid rgba(201, 149, 54, 0.46);
   transform: translate(calc(-50% - var(--footnote-popover-x, 0px)), -50%) rotate(45deg);
+}
+
+.scripture-ref[data-popover-hidden="true"] .scripture-popover,
+.footnote-ref[data-popover-hidden="true"] .footnote-popover {
+  opacity: 0;
+  pointer-events: none;
+}
+
+@media (max-width: 640px) {
+  .footnote-popover,
+  .footnote-ref[data-side="top"] .footnote-popover {
+    position: fixed;
+    inset: auto 1rem 1rem 1rem;
+    width: auto;
+    max-width: calc(100vw - 2rem);
+    max-height: min(22rem, calc(100vh - 2rem));
+    transform: translateY(0.45rem) scale(0.98);
+    transform-origin: bottom center;
+  }
+
+  .footnote-popover::after,
+  .footnote-ref[data-side="top"] .footnote-popover::after {
+    display: none;
+  }
+
+  .footnote-ref:hover .footnote-popover,
+  .footnote-ref:focus-within .footnote-popover,
+  .footnote-ref[data-side="top"]:hover .footnote-popover,
+  .footnote-ref[data-side="top"]:focus-within .footnote-popover {
+    transform: translateY(0) scale(1);
+  }
 }
 
 .footnote-target {

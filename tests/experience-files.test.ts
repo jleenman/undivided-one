@@ -239,6 +239,25 @@ describe('visual experience implementation', () => {
     expect(css).toContain('data-popover-hidden')
   })
 
+  it('keeps mobile popovers dismissible and inside the viewport', () => {
+    const footnoteBehavior = readFileSync('components/FootnoteBehavior.vue', 'utf8')
+    const scriptureBehavior = readFileSync('components/ScriptureBehavior.vue', 'utf8')
+    const css = readFileSync('assets/css/main.css', 'utf8')
+
+    expect(footnoteBehavior).toContain('event.target as HTMLElement')
+    expect(footnoteBehavior).toContain('closest(\'[data-popover-close]\')')
+    expect(footnoteBehavior).toContain('button.addEventListener(\'pointerdown\', closePopover)')
+    expect(scriptureBehavior).toContain('button.addEventListener(\'pointerdown\', closePopover)')
+    expect(css).toContain('.footnote-popover,')
+    expect(css).toContain('position: fixed;')
+    expect(css.indexOf('.footnote-ref:hover .footnote-popover')).toBeLessThan(
+      css.indexOf('.footnote-ref[data-popover-hidden="true"] .footnote-popover'),
+    )
+    expect(css.indexOf('.footnote-popover {')).toBeLessThan(
+      css.lastIndexOf('.footnote-popover,\n  .footnote-ref[data-side="top"] .footnote-popover'),
+    )
+  })
+
   it('keeps hash-linked content clear of the sticky header', () => {
     const css = readFileSync('assets/css/main.css', 'utf8')
     const article = readFileSync('components/ArticleRenderer.vue', 'utf8')
