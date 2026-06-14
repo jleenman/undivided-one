@@ -20,8 +20,7 @@ useLocalizedSeo({
     reading-time-label="min read"
     contents-label="On this page"
     :previous="{ label: 'Start Here', to: '/en/start' }"
-    :next="{ label: 'The Argument in 10 Points', to: '/en/argument' }"
-    :secondary="{ label: 'Full Essay', to: '/en/essay' }"
+    :next="{ label: 'The Argument in 10 Points', to: '/en/argument', primary: true }"
     pdf-label="Download the full essay"
   />
 </template>

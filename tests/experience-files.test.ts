@@ -203,6 +203,33 @@ describe('visual experience implementation', () => {
     expect(introRenderer).toContain('DownloadButtons')
   })
 
+  it('keeps the bilingual visitor journey in a linear previous and next flow', () => {
+    const enStart = readFileSync('pages/en/start.vue', 'utf8')
+    const enQuestion = readFileSync('pages/en/question.vue', 'utf8')
+    const enArgument = readFileSync('pages/en/argument.vue', 'utf8')
+    const nlStart = readFileSync('pages/nl/start.vue', 'utf8')
+    const nlQuestion = readFileSync('pages/nl/question.vue', 'utf8')
+    const nlArgument = readFileSync('pages/nl/argument.vue', 'utf8')
+
+    expect(enStart).toContain(":previous=\"{ label: 'English home', to: '/en' }\"")
+    expect(enStart).toContain(":next=\"{ label: 'The Question', to: '/en/question', primary: true }\"")
+    expect(enStart).not.toContain('The Argument in 10 Points')
+    expect(enQuestion).toContain(":previous=\"{ label: 'Start Here', to: '/en/start' }\"")
+    expect(enQuestion).toContain(":next=\"{ label: 'The Argument in 10 Points', to: '/en/argument', primary: true }\"")
+    expect(enQuestion).not.toContain(":secondary")
+    expect(enArgument).toContain(":previous=\"{ label: 'The Question', to: '/en/question' }\"")
+    expect(enArgument).toContain(":next=\"{ label: 'Read the Full Essay', to: '/en/essay', primary: true }\"")
+
+    expect(nlStart).toContain(":previous=\"{ label: 'Nederlandse home', to: '/nl' }\"")
+    expect(nlStart).toContain(":next=\"{ label: 'De vraag', to: '/nl/question', primary: true }\"")
+    expect(nlStart).not.toContain('Het argument in 10 punten')
+    expect(nlQuestion).toContain(":previous=\"{ label: 'Begin hier', to: '/nl/start' }\"")
+    expect(nlQuestion).toContain(":next=\"{ label: 'Het argument in 10 punten', to: '/nl/argument', primary: true }\"")
+    expect(nlQuestion).not.toContain(":secondary")
+    expect(nlArgument).toContain(":previous=\"{ label: 'De vraag', to: '/nl/question' }\"")
+    expect(nlArgument).toContain(":next=\"{ label: 'Lees de volledige essay', to: '/nl/essay', primary: true }\"")
+  })
+
   it('keeps introductory content separate from the approved essay', () => {
     for (const file of [
       'content/en/start.md',

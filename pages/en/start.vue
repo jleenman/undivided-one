@@ -19,8 +19,8 @@ useLocalizedSeo({
     eyebrow="UNDIVIDED ONE"
     reading-time-label="min read"
     contents-label="Start here"
-    :next="{ label: 'The Question', to: '/en/question' }"
-    :secondary="{ label: 'The Argument in 10 Points', to: '/en/argument' }"
+    :previous="{ label: 'English home', to: '/en' }"
+    :next="{ label: 'The Question', to: '/en/question', primary: true }"
     pdf-label="Download the full essay"
   />
 </template>
