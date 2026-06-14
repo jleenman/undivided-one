@@ -11,6 +11,13 @@
   scroll-padding-top: var(--anchor-offset);
 }
 
+html,
+body {
+  max-width: 100%;
+  overflow-x: clip;
+  overscroll-behavior-x: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
   :root {
     scroll-behavior: auto;
