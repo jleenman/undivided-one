@@ -7,8 +7,8 @@ const document = parseMarkdown(start, { locale: 'nl' })
 useLocalizedSeo({
   locale: 'nl',
   path: '/nl/start',
-  title: 'Begin hier — Undivided One',
-  description: document.meta.description || 'Begin hier om de vraag achter Undivided One te begrijpen voordat je de volledige essay leest.',
+  title: 'De vraag — Undivided One',
+  description: document.meta.description || 'Een korte introductie op de vraag achter Undivided One.',
 })
 </script>
 
@@ -18,9 +18,9 @@ useLocalizedSeo({
     locale="nl"
     eyebrow="UNDIVIDED ONE"
     reading-time-label="min lezen"
-    contents-label="Begin hier"
+    contents-label="De vraag"
     :previous="{ label: 'Nederlandse home', to: '/nl' }"
-    :next="{ label: 'De vraag', to: '/nl/question', primary: true }"
+    :next="{ label: 'Het argument in 10 punten', to: '/nl/argument', primary: true }"
     pdf-label="Download de volledige essay"
   />
 </template>

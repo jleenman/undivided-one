@@ -1,65 +1,71 @@
 ---
-title: "Start Here"
-subtitle: "A quiet route into the essay"
-description: "Begin here for a simple reading path through Undivided One before entering the full essay."
+title: "The Question"
+subtitle: "Three texts that invite careful attention"
+description: "A short introduction to the tension between Deuteronomy 6:4, John 14:9, and John 17:3."
 ---
 
-## What This Site Is
+## Three Texts
 
-Undivided One is not meant to begin as a debate. It begins as an invitation to read slowly.
+Three texts stand near the center of this whole inquiry:
 
-The full essay is the center of the site, but it asks for patience. It moves through Scripture, language, inherited doctrine, and worship. A new reader can enter it directly, but the better path is to take a few steps first.
+- Deuteronomy 6:4: "Hear, O Israel: The LORD our God is one LORD."
+- John 14:9: "he that hath seen me hath seen the Father."
+- John 17:3: "that they might know thee the only true God, and Jesus Christ, whom thou hast sent."
 
-This page is that path.
+None of these texts is obscure. None needs to be made dramatic. Their force lies in their clarity.
 
-It does not replace the essay. It does not summarize every argument. It simply shows how the pieces of the site fit together, so that the question can be approached without haste.
+## Hear, O Israel
 
-The movement is simple:
+Deuteronomy 6:4 is the confession at the heart of Israel's faith. It does not begin with speculation about God's inner structure. It begins with worship, covenant, identity, and allegiance.
 
-1. Start here.
-2. Read the question.
-3. Walk through the argument in ten points.
-4. Continue into the full essay.
-5. Download the PDF if you want to read more slowly.
+The LORD is Israel's God. The LORD is one.
 
-That order matters. The site is not built to win a quick reaction. It is built to help the reader recognize the shape of the inquiry before entering its full depth.
+This oneness is not a thin abstraction. It gathers God's Name, faithfulness, presence, action, and worship into one confession. Israel is not invited to seek God among divided powers or competing heavenly identities. Israel is called to love the One with heart, soul, and strength.
 
-## How To Read
+For anyone reading Jesus within Scripture, this confession cannot be bypassed. It is not a pre-Christian problem to be solved later. It is the ground on which Jesus Himself stands.
 
-Read contemplatively before reading critically.
+## Whoever Has Seen Me
 
-That does not mean reading without discernment. It means allowing the biblical texts to create the question before rushing to settle it. The essay is concerned with recognition: where does Scripture teach us to know the One God, and what happens when Jesus stands at the center of that knowing?
+In John 14, Philip asks for what every faithful heart longs for: "Lord, show us the Father."
 
-The pages before the essay are intentionally brief.
+Jesus' answer is startling because it is so direct. He does not rebuke the desire to know the Father. He redirects the place where Philip expects that knowledge to be found.
 
-The Question focuses on three texts that create the central tension. The Argument in 10 Points gives a compact map of how the essay moves. The Full Essay then develops the case with Scripture, footnotes, and chapter structure.
+"He that hath seen me hath seen the Father."
 
-If you are new to the site, do not start by asking whether you agree with every term. Start by asking whether the question is being heard clearly.
+This saying creates pressure. If the Father is truly seen in Jesus, then Jesus cannot be treated as a mere pointer away from Himself. The visibility of Jesus is not a distraction from the invisible God. It is the way God has chosen to make Himself known.
 
-## The Reading Path
+And yet Jesus does not stop being human. He speaks, walks, suffers, prays, and obeys. The revelation comes in flesh, not as an escape from flesh.
 
-The next page is The Question.
+## That They May Know
 
-It does one thing: it places Deuteronomy 6:4, John 14:9, and John 17:3 next to each other. Those texts are not used as slogans. They are allowed to stand in their own weight.
+In John 17:3, Jesus prays to the Father and names Him "the only true God." He also speaks of Himself as the one whom God has sent.
 
-After that, The Argument in 10 Points gives the reader a short overview. It is not a replacement for the essay. It is a map, not the territory.
+This text must be allowed to speak with full weight. Jesus is not pretending to pray. His sentness is real. His human obedience is real. The distinction in the prayer is real.
 
-Only then does the flow lead to the full essay.
+But this does not erase John 14:9. The same Gospel that gives us John 17 also gives us the claim that seeing Jesus is seeing the Father. John does not seem embarrassed by placing these truths together.
 
-That structure is intentional. The essay is long because the subject is not small. A reader should not be forced to choose between a slogan and a book-length treatment. The introductory route gives enough orientation to decide how to continue.
+The result is not a contradiction to escape, but a tension to inhabit.
 
-## What To Expect
+## The Tension
 
-The essay speaks about one identity, echad, revelation, the seen and unseen God, and Jesus as the visible revelation of the One God.
+Deuteronomy confesses the One. John 14 says the Father is seen in Jesus. John 17 says eternal life is knowing the only true God and Jesus Christ whom He has sent.
 
-It is not trying to create a new system. It is trying to ask whether Scripture itself directs us to know God in a way that is more immediate, more Hebraic, and more centered on revelation than on later conceptual frameworks.
+If we isolate one text, the question becomes easier than Scripture allows. If we hold them together, a deeper question appears:
 
-That means the tone matters.
+How can the one God be truly known in Jesus without being divided, duplicated, or reduced?
 
-The site should be read without polemical pressure. It does not begin by attacking Christians who use different theological language. It asks a quieter question: when Scripture shows us Jesus, who are we being taught to recognize?
+That question is the doorway into the essay.
 
-## Continue
+It asks readers to pause before inherited categories rush in. It asks them to consider whether Scripture's own pattern is not first explanation, but revelation. God is one. God is unseen. God comes near. God is known in Jesus.
 
-Continue with The Question.
+## An Invitation
 
-Let the three texts stand together first. Then move to the ten-point map. Then enter the full essay with the route already in view.
+This page does not ask for a quick conclusion. It asks for careful attention.
+
+Many Christians have tried to honor these texts with different vocabularies. The invitation here is not to begin by judging those attempts, but to return to the texts themselves and ask what they are doing.
+
+The full essay follows that path at length. It begins with the Shema and the Name, moves through the seen and unseen God, listens to Jesus' words and actions, and asks what kind of confession remains most faithful to the biblical witness.
+
+Start with the question.
+
+What if Jesus is not merely the one who explains God, but the One in whom God has made Himself visible?

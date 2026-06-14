@@ -19,7 +19,7 @@ useLocalizedSeo({
     eyebrow="10 POINTS"
     reading-time-label="min read"
     contents-label="The argument"
-    :previous="{ label: 'The Question', to: '/en/question' }"
+    :previous="{ label: 'The Question', to: '/en/start' }"
     :next="{ label: 'Read the Full Essay', to: '/en/essay', primary: true }"
     pdf-label="Download the full essay"
   />

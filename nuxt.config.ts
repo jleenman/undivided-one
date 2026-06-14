@@ -24,8 +24,6 @@ export default defineNuxtConfig({
         '/en',
         '/nl/start',
         '/en/start',
-        '/nl/question',
-        '/en/question',
         '/nl/argument',
         '/en/argument',
         '/nl/essay',

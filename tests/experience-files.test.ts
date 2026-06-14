@@ -131,6 +131,8 @@ describe('visual experience implementation', () => {
     expect(landing).toContain("locale === 'nl' ? 'Begin met de vraag.'")
     expect(landing).toContain(':labels-locale="locale"')
     expect(downloads).toContain('Download Engelse PDF')
+    expect(downloads).toContain('effectiveLocale')
+    expect(downloads).toContain('props.locale || props.labelsLocale')
   })
 
   it('adds a spatial reading layer to essay and confession pages', () => {
@@ -187,9 +189,11 @@ describe('visual experience implementation', () => {
     const landing = readFileSync('components/LandingExperience.vue', 'utf8')
     const introRenderer = readFileSync('components/IntroPageRenderer.vue', 'utf8')
 
-    for (const route of ['/nl/start', '/en/start', '/nl/question', '/en/question', '/nl/argument', '/en/argument']) {
+    for (const route of ['/nl/start', '/en/start', '/nl/argument', '/en/argument']) {
       expect(config).toContain(`'${route}'`)
     }
+    expect(config).not.toContain("'/nl/question'")
+    expect(config).not.toContain("'/en/question'")
 
     expect(header).toContain('/en/start')
     expect(header).toContain('/nl/start')
@@ -205,38 +209,34 @@ describe('visual experience implementation', () => {
 
   it('keeps the bilingual visitor journey in a linear previous and next flow', () => {
     const enStart = readFileSync('pages/en/start.vue', 'utf8')
-    const enQuestion = readFileSync('pages/en/question.vue', 'utf8')
     const enArgument = readFileSync('pages/en/argument.vue', 'utf8')
     const nlStart = readFileSync('pages/nl/start.vue', 'utf8')
-    const nlQuestion = readFileSync('pages/nl/question.vue', 'utf8')
     const nlArgument = readFileSync('pages/nl/argument.vue', 'utf8')
+    const enStartContent = readFileSync('content/en/start.md', 'utf8')
+    const nlStartContent = readFileSync('content/nl/start.md', 'utf8')
 
     expect(enStart).toContain(":previous=\"{ label: 'English home', to: '/en' }\"")
-    expect(enStart).toContain(":next=\"{ label: 'The Question', to: '/en/question', primary: true }\"")
-    expect(enStart).not.toContain('The Argument in 10 Points')
-    expect(enQuestion).toContain(":previous=\"{ label: 'Start Here', to: '/en/start' }\"")
-    expect(enQuestion).toContain(":next=\"{ label: 'The Argument in 10 Points', to: '/en/argument', primary: true }\"")
-    expect(enQuestion).not.toContain(":secondary")
-    expect(enArgument).toContain(":previous=\"{ label: 'The Question', to: '/en/question' }\"")
+    expect(enStart).toContain(":next=\"{ label: 'The Argument in 10 Points', to: '/en/argument', primary: true }\"")
+    expect(enStart).not.toContain("to: '/en/question'")
+    expect(enStartContent).toContain('title: "The Question"')
+    expect(enStartContent).toContain('Deuteronomy 6:4')
+    expect(enArgument).toContain(":previous=\"{ label: 'The Question', to: '/en/start' }\"")
     expect(enArgument).toContain(":next=\"{ label: 'Read the Full Essay', to: '/en/essay', primary: true }\"")
 
     expect(nlStart).toContain(":previous=\"{ label: 'Nederlandse home', to: '/nl' }\"")
-    expect(nlStart).toContain(":next=\"{ label: 'De vraag', to: '/nl/question', primary: true }\"")
-    expect(nlStart).not.toContain('Het argument in 10 punten')
-    expect(nlQuestion).toContain(":previous=\"{ label: 'Begin hier', to: '/nl/start' }\"")
-    expect(nlQuestion).toContain(":next=\"{ label: 'Het argument in 10 punten', to: '/nl/argument', primary: true }\"")
-    expect(nlQuestion).not.toContain(":secondary")
-    expect(nlArgument).toContain(":previous=\"{ label: 'De vraag', to: '/nl/question' }\"")
+    expect(nlStart).toContain(":next=\"{ label: 'Het argument in 10 punten', to: '/nl/argument', primary: true }\"")
+    expect(nlStart).not.toContain("to: '/nl/question'")
+    expect(nlStartContent).toContain('title: "De vraag"')
+    expect(nlStartContent).toContain('Deuteronomium 6:4')
+    expect(nlArgument).toContain(":previous=\"{ label: 'De vraag', to: '/nl/start' }\"")
     expect(nlArgument).toContain(":next=\"{ label: 'Lees de volledige essay', to: '/nl/essay', primary: true }\"")
   })
 
   it('keeps introductory content separate from the approved essay', () => {
     for (const file of [
       'content/en/start.md',
-      'content/en/question.md',
       'content/en/argument.md',
       'content/nl/start.md',
-      'content/nl/question.md',
       'content/nl/argument.md',
     ]) {
       const source = readFileSync(file, 'utf8')
@@ -278,6 +278,9 @@ describe('visual experience implementation', () => {
     expect(css).toContain('.footnote-popover,')
     expect(css).toContain('position: fixed;')
     expect(css).toContain('pointer-events: auto')
+    expect(css).toContain('.popover-close {\n  display: none;')
+    expect(css).toContain('@media (max-width: 640px), (hover: none), (pointer: coarse)')
+    expect(css).toContain('.popover-close {\n    display: grid;')
     expect(css.indexOf('.footnote-ref:hover .footnote-popover')).toBeLessThan(
       css.indexOf('.footnote-ref[data-popover-hidden="true"] .footnote-popover'),
     )

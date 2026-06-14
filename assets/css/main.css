@@ -472,10 +472,10 @@ body {
 }
 
 .popover-close {
+  display: none;
   position: sticky;
   top: 0;
   float: right;
-  display: grid;
   width: 1.85rem;
   height: 1.85rem;
   margin: -0.35rem -0.4rem 0.4rem 0.75rem;
@@ -493,6 +493,12 @@ body {
   border-color: rgba(201, 149, 54, 0.78);
   color: #c99536;
   outline: none;
+}
+
+@media (max-width: 640px), (hover: none), (pointer: coarse) {
+  .popover-close {
+    display: grid;
+  }
 }
 
 @media (max-width: 640px) {
