@@ -265,6 +265,17 @@ describe('visual experience implementation', () => {
     )
   })
 
+  it('prevents iOS viewport zoom and page-level horizontal overflow', () => {
+    const nuxtConfig = readFileSync('nuxt.config.ts', 'utf8')
+    const css = readFileSync('assets/css/main.css', 'utf8')
+
+    expect(nuxtConfig).toContain('width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no')
+    expect(nuxtConfig).toContain('viewport-fit=cover')
+    expect(css).toContain('html,')
+    expect(css).toContain('overflow-x: clip')
+    expect(css).toContain('overscroll-behavior-x: none')
+  })
+
   it('keeps hash-linked content clear of the sticky header', () => {
     const css = readFileSync('assets/css/main.css', 'utf8')
     const article = readFileSync('components/ArticleRenderer.vue', 'utf8')
