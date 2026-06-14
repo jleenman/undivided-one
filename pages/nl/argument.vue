@@ -19,7 +19,7 @@ useLocalizedSeo({
     eyebrow="10 PUNTEN"
     reading-time-label="min lezen"
     contents-label="Het argument"
-    :previous="{ label: 'De vraag', to: '/nl/question' }"
+    :previous="{ label: 'De vraag', to: '/nl/start' }"
     :next="{ label: 'Lees de volledige essay', to: '/nl/essay', primary: true }"
     pdf-label="Download de volledige essay"
   />

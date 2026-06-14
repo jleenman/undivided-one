@@ -1,15 +1,17 @@
 <script setup lang="ts">
-defineProps<{
+const props = defineProps<{
   locale?: 'nl' | 'en'
   labelsLocale?: 'nl' | 'en'
   compact?: boolean
 }>()
+
+const effectiveLocale = computed(() => props.locale || props.labelsLocale)
 </script>
 
 <template>
   <div class="flex flex-wrap gap-3">
     <a
-      v-if="!locale || locale === 'nl'"
+      v-if="!effectiveLocale || effectiveLocale === 'nl'"
       href="/downloads/undivided-essay-nl.pdf"
       download
       class="inline-flex items-center justify-center border border-gold bg-gold px-5 py-3 text-sm font-medium text-ink transition hover:bg-transparent"
@@ -18,7 +20,7 @@ defineProps<{
       Download Nederlandse PDF
     </a>
     <a
-      v-if="!locale || locale === 'en'"
+      v-if="!effectiveLocale || effectiveLocale === 'en'"
       href="/downloads/undivided-essay-en.pdf"
       download
       class="inline-flex items-center justify-center border border-ink/20 px-5 py-3 text-sm font-medium text-ink transition hover:border-gold hover:text-ember"
