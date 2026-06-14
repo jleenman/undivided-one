@@ -33,6 +33,8 @@ function positionFootnote(ref: HTMLElement) {
 onMounted(() => {
   const refs = [...document.querySelectorAll<HTMLElement>('.footnote-ref')]
   const reposition = (event: Event) => {
+    const target = event.target as HTMLElement
+    if (target.closest('[data-popover-close]')) return
     const ref = event.currentTarget as HTMLElement
     delete ref.dataset.popoverHidden
     positionFootnote(ref)
@@ -48,7 +50,8 @@ onMounted(() => {
     const ref = button.closest<HTMLElement>('.footnote-ref')
     if (!ref) return
     ref.dataset.popoverHidden = 'true'
-    button.blur()
+    const active = document.activeElement
+    if (active instanceof HTMLElement && ref.contains(active)) active.blur()
   }
 
   window.requestAnimationFrame(positionAll)
@@ -62,6 +65,8 @@ onMounted(() => {
     ref.addEventListener('touchstart', reposition, { passive: true })
   }
   for (const button of closeButtons) {
+    button.addEventListener('pointerdown', closePopover)
+    button.addEventListener('touchstart', closePopover)
     button.addEventListener('click', closePopover)
   }
   window.addEventListener('resize', positionAll)
@@ -77,6 +82,8 @@ onMounted(() => {
       ref.removeEventListener('touchstart', reposition)
     }
     for (const button of closeButtons) {
+      button.removeEventListener('pointerdown', closePopover)
+      button.removeEventListener('touchstart', closePopover)
       button.removeEventListener('click', closePopover)
     }
     window.removeEventListener('resize', positionAll)
