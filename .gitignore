@@ -7,3 +7,10 @@ dist
 coverage
 *.log
 .superpowers/
+
+# Local process artifacts
+docs/content-drafts/
+docs/screenshots/
+docs/*implementation-report*.md
+docs/*ux-proposal*.md
+docs/superpowers/
