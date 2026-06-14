@@ -194,7 +194,7 @@ function renderScriptureTextPart(value: string, locale: ScriptureLocale) {
       .map((item) => `<span class="scripture-popover-ref">${escapeHtml(item.reference)}</span><span>${escapeHtml(item.text)}</span>`)
       .join('<span class="scripture-popover-divider"></span>')
 
-    return `<span class="scripture-ref" tabindex="0"><span class="scripture-ref-label">${match}</span><span class="scripture-popover" role="tooltip"><span class="scripture-version">${source}</span>${tooltip}</span></span>`
+    return `<span class="scripture-ref" tabindex="0"><span class="scripture-ref-label">${match}</span><span class="scripture-popover" role="tooltip"><button type="button" class="popover-close scripture-popover-close" data-popover-close aria-label="Close scripture text">&times;</button><span class="scripture-version">${source}</span>${tooltip}</span></span>`
   })
 }
 

@@ -56,7 +56,7 @@ const sectionHeadings = computed(() => props.document.headings.filter((heading) 
           <details class="border border-ink/10 bg-bone/90 p-4 lg:hidden">
             <summary class="font-display display-title cursor-pointer text-lg">{{ contentsLabel }}</summary>
             <nav class="mt-4 flex flex-col gap-2 text-sm">
-              <a v-for="heading in sectionHeadings" :key="heading.id" :href="`#${heading.id}`" class="toc-link text-ink/65">
+              <a v-for="heading in sectionHeadings" :key="heading.id" :href="`#${heading.id}`" class="mobile-toc-link text-ink/65">
                 {{ heading.text }}
               </a>
             </nav>

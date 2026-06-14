@@ -119,8 +119,8 @@ onMounted(() => {
               v-for="heading in chapterHeadings"
               :key="heading.id"
               :href="`#${heading.id}`"
-              class="toc-link"
-              :class="isActiveHeading(heading.id) ? 'toc-link-active' : 'text-ink/65'"
+              class="mobile-toc-link"
+              :class="isActiveHeading(heading.id) ? 'mobile-toc-link-active' : 'text-ink/65'"
             >
               {{ heading.text }}
             </a>

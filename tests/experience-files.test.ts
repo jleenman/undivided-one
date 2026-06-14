@@ -222,6 +222,7 @@ describe('visual experience implementation', () => {
 
   it('makes the article table of contents active and collapsible', () => {
     const article = readFileSync('components/ArticleRenderer.vue', 'utf8')
+    const intro = readFileSync('components/IntroPageRenderer.vue', 'utf8')
     const css = readFileSync('assets/css/main.css', 'utf8')
 
     expect(article).toContain('activeHeadingId')
@@ -229,8 +230,13 @@ describe('visual experience implementation', () => {
     expect(article).toContain('tocCollapsed')
     expect(article).toContain('toc-link-active')
     expect(article).toContain('toc-collapsed')
+    expect(article).toContain('mobile-toc-link')
+    expect(intro).toContain('mobile-toc-link')
     expect(css).toContain('.toc-link-active')
     expect(css).toContain('.toc-collapse-panel')
+    expect(css).toContain('.mobile-toc-link')
+    expect(css).toContain('overflow-wrap: anywhere')
+    expect(css).toContain('data-popover-hidden')
   })
 
   it('keeps hash-linked content clear of the sticky header', () => {

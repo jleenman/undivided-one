@@ -39,7 +39,11 @@ function positionScripture(ref: HTMLElement) {
 
 onMounted(() => {
   const refs = [...document.querySelectorAll<HTMLElement>('.scripture-ref')]
-  const reposition = (event: Event) => positionScripture(event.currentTarget as HTMLElement)
+  const reposition = (event: Event) => {
+    const ref = event.currentTarget as HTMLElement
+    delete ref.dataset.popoverHidden
+    positionScripture(ref)
+  }
   const positionActive = () => {
     for (const ref of refs) {
       if (ref.matches(':hover, :focus-within')) positionScripture(ref)
@@ -47,6 +51,16 @@ onMounted(() => {
   }
   const schedulePositionAll = () => {
     window.requestAnimationFrame(() => window.requestAnimationFrame(positionActive))
+  }
+  const closeButtons = [...document.querySelectorAll<HTMLButtonElement>('.scripture-popover-close')]
+  const closePopover = (event: Event) => {
+    event.preventDefault()
+    event.stopPropagation()
+    const button = event.currentTarget as HTMLElement
+    const ref = button.closest<HTMLElement>('.scripture-ref')
+    if (!ref) return
+    ref.dataset.popoverHidden = 'true'
+    button.blur()
   }
 
   for (const ref of refs) {
@@ -56,6 +70,9 @@ onMounted(() => {
     ref.addEventListener('pointerover', reposition)
     ref.addEventListener('focusin', reposition)
     ref.addEventListener('touchstart', reposition, { passive: true })
+  }
+  for (const button of closeButtons) {
+    button.addEventListener('click', closePopover)
   }
   window.addEventListener('resize', schedulePositionAll)
   window.addEventListener('orientationchange', schedulePositionAll)
@@ -69,6 +86,9 @@ onMounted(() => {
       ref.removeEventListener('pointerover', reposition)
       ref.removeEventListener('focusin', reposition)
       ref.removeEventListener('touchstart', reposition)
+    }
+    for (const button of closeButtons) {
+      button.removeEventListener('click', closePopover)
     }
     window.removeEventListener('resize', schedulePositionAll)
     window.removeEventListener('orientationchange', schedulePositionAll)

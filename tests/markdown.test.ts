@@ -56,6 +56,30 @@ Paragraph with a footnote.2 Another spaced note: 3 Not a bible reference John 17
     })
   })
 
+  it('renders close buttons in footnote and scripture popovers for touch users', () => {
+    const footnoteDoc = parseMarkdown(`
+Paragraph with a footnote.2
+
+## Footnotes
+
+2 This is the footnote content.
+`)
+    const scriptureDoc = parseMarkdown('John 17:3 is central.', { locale: 'en' })
+
+    expect(footnoteDoc.blocks[0]).toMatchObject({
+      html: expect.stringContaining('class="popover-close footnote-popover-close"'),
+    })
+    expect(footnoteDoc.blocks[0]).toMatchObject({
+      html: expect.stringContaining('data-popover-close'),
+    })
+    expect(scriptureDoc.blocks[0]).toMatchObject({
+      html: expect.stringContaining('class="popover-close scripture-popover-close"'),
+    })
+    expect(scriptureDoc.blocks[0]).toMatchObject({
+      html: expect.stringContaining('data-popover-close'),
+    })
+  })
+
   it('uses unique reference ids and links footnote definitions back to the first reference', () => {
     const doc = parseMarkdown(`
 First use.5 Second use.5

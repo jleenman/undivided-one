@@ -163,7 +163,7 @@ function renderInline(value: string, context: RenderContext, linkFootnotes = tru
     const refId = count === 1 ? `fnref-${number}` : `fnref-${number}-${count}`
     const popoverId = count === 1 ? `footnote-popover-${number}` : `footnote-popover-${number}-${count}`
 
-    return `${punctuation}<sup class="footnote-ref" id="${refId}"><a href="#${footnote.id}" aria-describedby="${popoverId}">${number}</a><span id="${popoverId}" class="footnote-popover" role="tooltip">${footnote.html}</span></sup>`
+    return `${punctuation}<sup class="footnote-ref" id="${refId}"><a href="#${footnote.id}" aria-describedby="${popoverId}">${number}</a><span id="${popoverId}" class="footnote-popover" role="tooltip"><button type="button" class="popover-close footnote-popover-close" data-popover-close aria-label="Close footnote">&times;</button>${footnote.html}</span></sup>`
   })
 
   return linkScriptures ? renderScriptureReferences(rendered, context.locale) : rendered
