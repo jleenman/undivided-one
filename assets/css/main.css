@@ -410,6 +410,7 @@ body {
 .scripture-ref:focus .scripture-popover,
 .scripture-ref:focus-within .scripture-popover {
   opacity: 1;
+  pointer-events: auto;
   transform: translate(-50%, 0) scale(1);
 }
 
@@ -499,8 +500,13 @@ body {
 
   .scripture-popover,
   .scripture-ref[data-side="top"] .scripture-popover {
+    box-sizing: border-box;
     position: fixed;
     inset: auto 1rem 1rem 1rem;
+    left: 1rem;
+    right: 1rem;
+    top: auto;
+    bottom: 1rem;
     width: auto;
     max-width: calc(100vw - 2rem);
     max-height: min(22rem, calc(100vh - 2rem));
@@ -596,6 +602,7 @@ body {
 .footnote-ref:hover .footnote-popover,
 .footnote-ref:focus-within .footnote-popover {
   opacity: 1;
+  pointer-events: auto;
   transform: translate(calc(-50% + var(--footnote-popover-x, 0px)), 0) scale(1);
 }
 
@@ -630,8 +637,13 @@ body {
 @media (max-width: 640px) {
   .footnote-popover,
   .footnote-ref[data-side="top"] .footnote-popover {
+    box-sizing: border-box;
     position: fixed;
     inset: auto 1rem 1rem 1rem;
+    left: 1rem;
+    right: 1rem;
+    top: auto;
+    bottom: 1rem;
     width: auto;
     max-width: calc(100vw - 2rem);
     max-height: min(22rem, calc(100vh - 2rem));

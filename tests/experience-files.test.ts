@@ -250,11 +250,18 @@ describe('visual experience implementation', () => {
     expect(scriptureBehavior).toContain('button.addEventListener(\'pointerdown\', closePopover)')
     expect(css).toContain('.footnote-popover,')
     expect(css).toContain('position: fixed;')
+    expect(css).toContain('pointer-events: auto')
     expect(css.indexOf('.footnote-ref:hover .footnote-popover')).toBeLessThan(
       css.indexOf('.footnote-ref[data-popover-hidden="true"] .footnote-popover'),
     )
+    expect(css.indexOf('.scripture-ref:hover .scripture-popover')).toBeLessThan(
+      css.indexOf('.scripture-ref[data-popover-hidden="true"] .scripture-popover'),
+    )
     expect(css.indexOf('.footnote-popover {')).toBeLessThan(
       css.lastIndexOf('.footnote-popover,\n  .footnote-ref[data-side="top"] .footnote-popover'),
+    )
+    expect(css.indexOf('.scripture-popover {')).toBeLessThan(
+      css.lastIndexOf('.scripture-popover,\n  .scripture-ref[data-side="top"] .scripture-popover'),
     )
   })
 
