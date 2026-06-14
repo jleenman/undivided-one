@@ -449,8 +449,8 @@ onMounted(() => {
     <div class="relative z-10 mx-auto flex min-h-[calc(100vh-65px)] max-w-6xl flex-col justify-center px-6 py-20">
       <p class="mb-6 text-xs uppercase tracking-[0.42em] text-gold">UNDIVIDED ONE</p>
       <h1 class="font-display display-title hero-display max-w-5xl text-6xl leading-[0.84] md:text-9xl">
-        The One God
-        <span class="block text-parchment/54">Made Visible</span>
+        {{ props.locale === 'nl' ? 'De Ene God' : 'The One God' }}
+        <span class="block text-parchment/54">{{ props.locale === 'nl' ? 'Zichtbaar geworden' : 'Made Visible' }}</span>
       </h1>
       <p class="mt-8 max-w-2xl text-lg leading-8 text-parchment/74 md:text-xl">
         {{ props.locale === 'nl'
@@ -459,7 +459,7 @@ onMounted(() => {
       </p>
       <div class="mt-10 flex flex-wrap gap-3">
         <NuxtLink to="/en/start" class="border border-gold bg-gold px-5 py-3 text-sm font-medium text-ink transition hover:bg-transparent hover:text-gold">
-          Start Here
+          {{ props.locale === 'nl' ? 'Lees in het Engels' : 'Start Here' }}
         </NuxtLink>
         <NuxtLink to="/nl/start" class="border border-parchment/25 px-5 py-3 text-sm font-medium text-parchment transition hover:border-gold hover:text-gold">
           Begin hier
