@@ -1,93 +1,65 @@
 ---
 title: "Start Here"
-subtitle: "A quiet orientation before the full essay"
-description: "Begin here to understand the question behind Undivided One before reading the full essay."
+subtitle: "A quiet route into the essay"
+description: "Begin here for a simple reading path through Undivided One before entering the full essay."
 ---
 
-## The Question
+## What This Site Is
 
-What does it mean to know the one God through Jesus?
+Undivided One is not meant to begin as a debate. It begins as an invitation to read slowly.
 
-That is the question beneath this site. Not first: which system is most complete? Not first: which vocabulary has won the longest historical argument? But: where does Scripture itself teach us to recognize God?
+The full essay is the center of the site, but it asks for patience. It moves through Scripture, language, inherited doctrine, and worship. A new reader can enter it directly, but the better path is to take a few steps first.
 
-The question is simple enough to be prayed, yet deep enough to unsettle every easy answer.
+This page is that path.
 
-Israel confesses: "The LORD our God is one LORD" (Deuteronomy 6:4). Jesus prays to the Father as "the only true God" and speaks of Himself as the one whom God has sent (John 17:3). Yet the same Jesus says, without hesitation: "he that hath seen me hath seen the Father" (John 14:9).
+It does not replace the essay. It does not summarize every argument. It simply shows how the pieces of the site fit together, so that the question can be approached without haste.
 
-These texts do not sit apart from each other. They belong together. They form a field of attention in which the reader is invited to slow down. The one God is confessed. Jesus is sent. The Father is seen in Him.
+The movement is simple:
 
-The question, then, is not whether Scripture speaks in tension. It plainly does. The question is how that tension is to be carried.
+1. Start here.
+2. Read the question.
+3. Walk through the argument in ten points.
+4. Continue into the full essay.
+5. Download the PDF if you want to read more slowly.
 
-Do we begin with a later framework and ask the biblical text to fit inside it? Or do we begin with the biblical witness itself: the Name, the Shema, the God who cannot be seen, and yet makes Himself visible?
+That order matters. The site is not built to win a quick reaction. It is built to help the reader recognize the shape of the inquiry before entering its full depth.
 
-Undivided One begins there.
+## How To Read
 
-## Why It Matters
+Read contemplatively before reading critically.
 
-Christian faith is not finally about mastering religious concepts. It is about knowing God.
+That does not mean reading without discernment. It means allowing the biblical texts to create the question before rushing to settle it. The essay is concerned with recognition: where does Scripture teach us to know the One God, and what happens when Jesus stands at the center of that knowing?
 
-That may sound obvious, but it changes the weight of the question. If knowing God is eternal life, then the way Scripture reveals God is not a secondary matter. It shapes worship, prayer, obedience, trust, and the way Jesus is confessed.
+The pages before the essay are intentionally brief.
 
-The concern here is not argument for argument's sake. It is not the desire to win a doctrinal contest. It is not an attack on Christians who have received different language and have loved God faithfully within it.
+The Question focuses on three texts that create the central tension. The Argument in 10 Points gives a compact map of how the essay moves. The Full Essay then develops the case with Scripture, footnotes, and chapter structure.
 
-The concern is recognition.
+If you are new to the site, do not start by asking whether you agree with every term. Start by asking whether the question is being heard clearly.
 
-When Philip asks Jesus, "show us the Father," Jesus does not send him beyond Himself. He does not say that Philip needs a more abstract map of divine relations. He says, in effect: you have been looking at Me, listening to Me, walking with Me, and still you have not recognized what has been given.
+## The Reading Path
 
-That moment matters because it reveals how easily God can be sought somewhere other than where He has chosen to be known.
+The next page is The Question.
 
-If Jesus is only treated as a representative of God, then the reader may still be waiting for God behind Him. If Jesus is treated as a second divine identity alongside the one God of Israel, then Scripture's confession of God's indivisible oneness must be carried with care. If Jesus is the visible revelation of the One God, then the question shifts. We are no longer asking how to divide mystery into categories. We are asking whether we recognize the One who has come near.
+It does one thing: it places Deuteronomy 6:4, John 14:9, and John 17:3 next to each other. Those texts are not used as slogans. They are allowed to stand in their own weight.
 
-This matters because Scripture does not give revelation as a puzzle to solve from a distance. It gives revelation as encounter.
+After that, The Argument in 10 Points gives the reader a short overview. It is not a replacement for the essay. It is a map, not the territory.
 
-## The Tension
+Only then does the flow lead to the full essay.
 
-The biblical witness holds together truths that human systems often try to separate.
+That structure is intentional. The essay is long because the subject is not small. A reader should not be forced to choose between a slogan and a book-length treatment. The introductory route gives enough orientation to decide how to continue.
 
-God is unseen. No one can master Him, contain Him, or look upon Him as an object. He is holy, free, and not reducible to human sight.
+## What To Expect
 
-And yet God appears. He speaks. His Name dwells among His people. His glory is seen. His angel speaks as YHWH. His presence fills the temple. His Word comes. His Spirit rests, moves, fills, and gives life.
+The essay speaks about one identity, echad, revelation, the seen and unseen God, and Jesus as the visible revelation of the One God.
 
-Scripture does not resolve this by introducing another god who can be seen while the true God remains hidden. Nor does it flatten the tension by pretending visibility is merely symbolic. It dares to say both: God cannot be seen, and God makes Himself known.
+It is not trying to create a new system. It is trying to ask whether Scripture itself directs us to know God in a way that is more immediate, more Hebraic, and more centered on revelation than on later conceptual frameworks.
 
-In Jesus, this tension becomes personal.
+That means the tone matters.
 
-He prays. He is sent. He obeys. He suffers. He learns obedience through what He suffers. He is truly human.
+The site should be read without polemical pressure. It does not begin by attacking Christians who use different theological language. It asks a quieter question: when Scripture shows us Jesus, who are we being taught to recognize?
 
-And yet He forgives sins, receives worship, speaks the Name-language of God, claims unity with the Father, and says that seeing Him is seeing the Father.
+## Continue
 
-The tension is not an embarrassment to remove. It is part of the revelation. It keeps us from reducing God either to an abstract heavenly idea or to a visible figure detached from Israel's confession of the One.
+Continue with The Question.
 
-The tension asks for attention before explanation.
-
-## The Proposal
-
-The proposal of the essay is that Scripture should be read from its own center of gravity: the one indivisible identity of God, revealed freely and fully as He chooses.
-
-This is described in the essay as Identity-Based Echad Monotheism. The phrase is not meant as a new religious badge. It is a way of naming a reading posture.
-
-"Echad" points back to Israel's confession that YHWH is one. Not one as a bare number only, but one in identity, faithfulness, Name, and worship. God is not divided into competing centers. He is the One who is, the One who acts, the One who saves, the One who comes near.
-
-"Identity-based" means that Scripture is read by asking who is being revealed, not first by asking how divine mechanics might be arranged. The Name, the acts, the glory, the worship, and the presence of God belong together.
-
-From that starting point, Jesus is not placed beside the One God as another divine identity. Nor is He reduced to a merely human messenger pointing away from Himself. He is confessed as the One God made visible: God known in human life, speech, suffering, death, resurrection, and glory.
-
-This does not remove mystery. It changes the way mystery is honored.
-
-Mystery is not protected by looking behind Jesus for a more ultimate God. Mystery is honored by receiving Jesus as the place where God has chosen to be known.
-
-The essay develops this carefully through Scripture: the Shema, the Name, the seen and unseen God, the words and acts of Jesus, the Spirit, the history of doctrine, and the final revelation of Jesus Christ.
-
-The proposal is not that readers should adopt a slogan quickly. It is that they should read slowly enough to hear the biblical witness on its own terms.
-
-## Continue Reading
-
-If this question matters to you, continue with the full essay.
-
-Read it as an exploration, not as a weapon. Let the opening chapters establish the Hebrew foundation. Let the middle chapters show how Jesus is recognized within that foundation. Let the later chapters test the language we have inherited and ask whether it helps or obscures the biblical center.
-
-The essay is long because the question deserves patience. It is not trying to replace faith with analysis. It is trying to return analysis to its proper place: in service of knowing God as He has given Himself.
-
-You can read the full essay online, with chapter navigation and footnotes, or download the PDF for slower reading.
-
-Begin with the question. Stay with the tension. Look at Jesus.
+Let the three texts stand together first. Then move to the ten-point map. Then enter the full essay with the route already in view.
