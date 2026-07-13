@@ -11,4 +11,4 @@
 - Open blockers: none for bootstrap publication. GitHub authentication and open-PR preflight were revalidated on 2026-07-13; PR #14 is unrelated and non-conflicting. Automations retain the same guard at runtime.
 - Validation: skill valid; prompt schema valid (14/14); tests 30/30; typecheck pass after removal of obsolete Payload residue; static generate pass; generated internal links 0 missing; no lint script exists.
 - Human review required: P-001 through P-004 and later canonical implementation; automation permissions.
-- PR: commit/push/draft-PR publication in progress on `codex/echad-research-program`.
+- PR: [#17 — Establish durable Echad research program](https://github.com/jleenman/undivided-one/pull/17) is open as a draft from `codex/echad-research-program`.
