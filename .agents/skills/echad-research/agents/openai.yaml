@@ -1,0 +1,7 @@
+interface:
+  display_name: "Echad Research"
+  short_description: "Controleerbaar theologisch onderzoek voor Undivided One"
+  default_prompt: "Gebruik $echad-research om precies één afgebakende Echad-onderzoekstaak methodisch uit te voeren."
+
+policy:
+  allow_implicit_invocation: true
